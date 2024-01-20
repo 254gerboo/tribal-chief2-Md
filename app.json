@@ -1,7 +1,7 @@
 {
     "name": "tribal-chief-Md By gerboo",
     "description": "A Whatsapp bot built in NodeJs to make experience better\n\t if there is any problem contact me",
-    "logo": "gorilla face binary"
+    "logo": "gorilla face binary",
     "keywords": ["whatsappbot", "tribalMd", "tribal Md Wa bot",  "tribal","tribal","tribal Md Whatsapp Bot","multi device"],
     "success_url": "/",
     "stack": "container",

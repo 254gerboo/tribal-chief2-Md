@@ -43,12 +43,12 @@ smd({
             category: "tools",
             filename: __filename
         },
-        async(Suhail, msg, text,{ isCreator }) => {
+        async(tribalchief, msg, text,{ isCreator }) => {
             if (!isCreator) return msg.reply(`This command is only for my owner`)
             let commits = await DB.syncgit()
             if (commits.total === 0) return await msg.reply(`*BOT IS UPTO DATE...!!*`) 
-            let update = `*SUHAIL_MD New Updates:*\n\n${await DB.sync()}`
-            await Suhail.bot.sendMessage(msg.chat, { text: update, },{ quoted : msg });
+            let update = `*tribalchief_MD New Updates:*\n\n${await DB.sync()}`
+            await tribalchief.bot.sendMessage(msg.chat, { text: update, },{ quoted : msg });
             if(Config.HEROKU_APP_NAME && Config.HEROKU_API_KEY && text == 'start')
             {
                await msg.reply('Heroku Build started...');

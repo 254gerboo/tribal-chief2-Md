@@ -18,16 +18,15 @@ const mojis = ['💘','💝','💖','💗','💓','💞','💕','💟','❣️',
 
 CURRENTLY RUNNING ON BETA VERSION!!
 *
-   * @project_name : 
-   * @author : Suhail Tech Info
-   * @youtube : https://www.youtube.com/SuhailTechInfo
-   * @description : Suhail-Md ,A Multi-functional whatsapp user bot.
-   * @version 1.2.2
+   * @project_name : tribal-chief-Md
+   * @author : 254gerboo
+   * @description : tribal-chief-Md ,A Multi-functional whatsapp user bot.
+   * @version 0.0.1
 *
    * Licensed under the  GPL-3.0 License;
 * 
-   * Created By Suhail Tech Info.
-   * © 2023 Suhail-Md.
+   * Created By 254gerboo.
+   * © 2024 tribal-chief-Md.
 * 
    * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
    * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -62,7 +61,7 @@ smd({
             category: "misc",
             filename: __filename
         },
-        async(gerboo.bot, msg, text) => {
+        async(tribalchief.bot, msg, text) => {
  if (!msg.quoted) return msg.reply("*Reply to A Code Of Statements to Execute*")
             try {
                 const code = {
@@ -97,7 +96,7 @@ smd({
             category: "user",
             filename: __filename
         },
-        async(Suhail, msg, text) => {
+        async(tribalchief, msg, text) => {
             if(!msg.quoted && !msg.mentionedJid) return await msg.reply(`*Please Reply Or Mention A User*`);
             let users = msg.mentionedJid ? msg.mentionedJid[0].split('@')[0] : msg.quoted ? msg.quoted.sender.split('@')[0] : text.replace('@')[0]
            return await  msg.reply(`https://wa.me/${users}`);
@@ -111,7 +110,7 @@ smd({
             category: "user",
             filename: __filename
         },
-        async(Suhail, msg, text) => {  let user = msg.sender.split('@')[0]  ; return await msg.reply( `https://wa.me/${user}` ); })
+        async(tribalchief, msg, text) => {  let user = msg.sender.split('@')[0]  ; return await msg.reply( `https://wa.me/${user}` ); })
     //---------------------------------------------------------------------------
 smd({
             pattern: "pick",
@@ -119,15 +118,15 @@ smd({
             category: "group",
             filename: __filename
         },
-        async(Suhail, msg, match) => {
+        async(tribalchief, msg, match) => {
             if (!match) return msg.reply("*Which type of User you want?*");
-            const groupMetadata = msg.isGroup ? await Suhail.bot.groupMetadata(msg.chat)
+            const groupMetadata = msg.isGroup ? await tribalchief.bot.groupMetadata(msg.chat)
                 .catch((e) => {}) : "";
             const participants = msg.isGroup ? await groupMetadata.participants : "";
             let member = participants.map((u) => u.id);
             let me = msg.sender;
             let pick = member[Math.floor(Math.random() * member.length)];
-            Suhail.bot.sendMessage(msg.chat, {
+            tribalchief.bot.sendMessage(msg.chat, {
                 text: `The most ${match} around us is *@${pick.split("@")[0]}*`,
                 mentions: [pick],
             }, {
@@ -144,7 +143,7 @@ smd({
             use: '<package name>',
             filename: __filename
         },
-        async(Suhail, msg, text) => {
+        async(tribalchief, msg, text) => {
             if (!text) return msg.reply('Please give me package name.📦')
             axios.get(`https://api.npms.io/v2/search?q=${text}`).then(({ data }) => {
                 let txt = data.results.map(({ package: pkg }) => `*${pkg.name}* (v${pkg.version})\n_${pkg.links.npm}_\n_${pkg.description}_`).join('\n\n')
@@ -160,7 +159,7 @@ smd({
             use: '<query>',
             filename: __filename
         },
-        async(Suhail, msg, text) => {
+        async(tribalchief, msg, text) => {
             if (!text) return msg.reply(`Example : ${prefix}fliptext Back in black`)
             flipe = text.split('').reverse().join('')
             msg.reply(`\`\`\`「  Text Flipper Tool  」\`\`\`\n*IGiven text :*\n${text}\n*Fliped text :*\n${flipe}`)
@@ -177,9 +176,9 @@ smd({
             use: '<url>',
             filename: __filename
         },
-        async(Suhail, msg, text) => {
+        async(tribalchief, msg, text) => {
             if (!text) return msg.reply(`_give me Video Link ?_`);
-            Suhail.bot.sendMessage(msg.chat, {
+            tribalchief.bot.sendMessage(msg.chat, {
                 video: {
                     url: text.split(" ")[0],
                 },
@@ -207,11 +206,11 @@ smd({
             category: "misc",
             filename: __filename
         },
-        async(gerboo, msg, text,{isCreator}) => {
+        async(tribalchief, msg, text,{isCreator}) => {
             let checkgroup = await sck.findOne({ id: msg.chat })
             if (!msg.isGroup) return msg.reply(tlang().group);
-            const groupAdmins = await getAdmin(Suhail.bot, msg)
-            //const botNumber = await gerboo.bot.decodeJid(gerboo.bot.user.id)
+            const groupAdmins = await getAdmin(tribalchief.bot, msg)
+            //const botNumber = await tribalchief.bot.decodeJid(tribalchief.bot.user.id)
             //const isBotAdmins = msg.isGroup ? groupAdmins.includes(botNumber) : false;
             const isAdmins = msg.isGroup ? groupAdmins.includes(msg.sender) : false;
             
@@ -235,7 +234,7 @@ smd({
             use: '<query>',
             filename: __filename
         },
-        async(Suhail, msg, text,{ isCreator }) => {
+        async(tribalchief, msg, text,{ isCreator }) => {
             try {
                 if (!text) return msg.reply(`Send text to be encoded.`);
 
@@ -255,7 +254,7 @@ smd({
             use: '<query>',
             filename: __filename
         },
-        async(gerboo, msg, text,{ isCreator }) => {
+        async(tribalchief, msg, text,{ isCreator }) => {
             try {
                 if (!text) return msg.reply(`Send text to be decoded.`);
                 let eb = await dBinary(text);
@@ -270,7 +269,7 @@ smd({
              // tribalchief.bot.sendMessage(msg.chat, { react: { text: mokis,key: msg.key } })
 
     //---------------------------------------------------------------------------
-smd({ on: "body" }, async(gerboo, msg,text,{icmd}) => {
+smd({ on: "body" }, async(tribalchief, msg,text,{icmd}) => {
     if (!Config.autoreaction) return 
     else if (Config.autoreaction === 'true' || (icmd && Config.autoreaction === 'cmd') ) {let emokis = emojis[Math.floor(Math.random() * (emojis.length))];return await react(msg,emokis)}
     else if (Config.autoreaction === 'all') {var mokis = mojis[Math.floor(Math.random() * (mojis.length))];return await react(msg,mokis) }

@@ -175,7 +175,7 @@ smd({
 async(tribalchief, msg , text,{ isCreator }) => {
 
      if (!isCreator) return msg.reply(tlang().owner);
-if (!text) return msg.reply (`give me Variable Name\n*E.x : ${prefix}setvar CAPTION: Powered By Suhail Tech*`);
+if (!text) return msg.reply (`give me Variable Name\n*E.x : ${prefix}setvar CAPTION: Powered By tribalchief Tech*`);
 const headers = 
         {
                  'Accept': 'application/vnd.heroku+json; version=3',
@@ -235,7 +235,7 @@ smd({
     },
     async(tribalchief, msg , text,{ isCreator }) => {
  if (!isCreator) return msg.reply(tlang().owner);
-if (!text) return msg.reply (`give me Variable Name\n*Example : ${prefix}setvar CAPTION: Powered By Suhail Tech*`);
+if (!text) return msg.reply (`give me Variable Name\n*Example : ${prefix}setvar CAPTION: Powered By tribalchief Tech*`);
 const headers = {
   'Accept': 'application/vnd.heroku+json; version=3',
   'Authorization': `Bearer ${authToken}`,

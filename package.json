@@ -1,13 +1,13 @@
 {
-    "name": "gerboo-md",
+    "name": "tribal-chief-md",
     "version": "0.0.1",
     "description": "Multi device whatsapp bot by gerboo.",
     "main": "lib/client.js",
     "type": "commonjs",
     "license": "GPL-3.0",
 "scripts": {
-     "start": "pm2 start lib/client.js --deep-monitoring --attach --name gerboo-Md",
-     "stop": "pm2 stop gerboo-Md"
+     "start": "pm2 start lib/client.js --deep-monitoring --attach --name tribal-chief-Md",
+     "stop": "pm2 stop tribal-chief-Md"
      },
     "author": "gerboo",
    "dependencies": {
@@ -64,3 +64,19 @@
             "pastebin-js": "latest",
             "wa-sticker-formatter": "^4.3.2"
            },
+           "directories": {
+            "lib": "lib",
+            "assets": "lib/assets"
+         },
+       "devDependencies": {
+            "pino": "^7.0.5"
+         },
+      "repository": {
+      "type": "git",
+      "url": "git+https://github.com/254gerboo/tribal-chief-Md.git"
+       },
+      "bugs": {
+      "url": "https://github.com/254gerboo/tribal-chief-Md/issues"
+       },
+      "homepage": "https://github.com/254gerboo/tribal-chief-Md#readme"
+       }
