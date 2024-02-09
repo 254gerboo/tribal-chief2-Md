@@ -11,7 +11,7 @@
      },
     "author": "gerboo",
    "dependencies": {
-            "@254gerboo/baileys": "latest",
+            "@whiskey/baileys": "latest",
             "@254gerboo/keyed-db": "^0.0.1",
             "awesome-phonenumber": "^3.3.0",
             "anime-character-random": "latest",
