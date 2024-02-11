@@ -12,7 +12,7 @@
     "author": "gerboo",
    "dependencies": {
             "@whiskey/baileys": "latest",
-            "@254gerboo/keyed-db": "^0.0.1",
+                         "@adiwajshing/keyed-db": "^0.2.4",
             "awesome-phonenumber": "^3.3.0",
             "anime-character-random": "latest",
             "axios": "^0.24.0",
